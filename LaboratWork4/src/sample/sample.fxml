@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="function">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="467.0" prefWidth="574.0">
+               <children>
+                  <RadioButton fx:id="function1" accessibleRole="BUTTON" layoutX="30.0" layoutY="17.0" mnemonicParsing="false" onAction="#SetFunction1" prefHeight="23.0" prefWidth="455.0" selected="true" text="Function 1" textAlignment="CENTER" textOverrun="CLIP">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group1" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Andalus" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="function2" accessibleRole="BUTTON" layoutX="30.0" layoutY="55.0" mnemonicParsing="false" onAction="#SetFunction2" prefHeight="23.0" prefWidth="455.0" text="Function 2" textAlignment="CENTER" toggleGroup="$group1">
+                     <font>
+                        <Font name="Andalus" size="14.0" />
+                     </font></RadioButton>
+                  <Label fx:id="func" depthTest="ENABLE" layoutX="30.0" layoutY="104.0" lineSpacing="1.0" prefHeight="25.0" prefWidth="455.0" text="y = 0 ">
+                     <font>
+                        <Font name="Arial Bold Italic" size="14.0" />
+                     </font></Label>
+                  <Button layoutX="30.0" layoutY="144.0" mnemonicParsing="false" onAction="#derivative" prefHeight="32.0" prefWidth="125.0" text="Derivative" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <TextField fx:id="variable" layoutX="32.0" layoutY="288.0" prefHeight="35.0" prefWidth="149.0" promptText="x =" text="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Button layoutX="32.0" layoutY="348.0" mnemonicParsing="false" onAction="#calculate" prefHeight="31.0" prefWidth="125.0" text="Calculate">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Label fx:id="sol" layoutX="27.0" layoutY="402.0" prefHeight="23.0" prefWidth="455.0" text="y = 0">
+                     <font>
+                        <Font name="Arial Bold Italic" size="14.0" />
+                     </font></Label>
+                  <TextField layoutX="315.0" layoutY="184.0" prefHeight="35.0" prefWidth="150.0" promptText="x1 =" text="1" fx:id="xstart" />
+                  <TextField layoutX="315.0" layoutY="236.0" prefHeight="35.0" prefWidth="149.0" promptText="x2 = " text="10" fx:id="xfinish">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font></TextField>
+                  <Button layoutX="314.0" layoutY="349.0" mnemonicParsing="false" onAction="#DrawChart" prefHeight="31.0" prefWidth="125.0" text="Build chart">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <TextField fx:id="numberOfPoints" layoutX="314.0" layoutY="288.0" prefHeight="35.0" prefWidth="150.0" promptText="n =" text="25">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="chart">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <LineChart fx:id="chart" layoutY="27.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis minorTickCount="9" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
